@@ -2166,28 +2166,28 @@
 		(uuid "434ff9e0-f447-4aee-a198-9ba595a41c67")
 	)
 	(no_connect
-		(at 139.7 87.63)
-		(uuid "4e2730cb-9a7d-4ed4-8ca1-92a027d4bd7f")
+		(at 139.7 90.17)
+		(uuid "9c21a9e0-9c4c-45f8-8519-ae061900187a")
 	)
 	(wire
 		(pts
-			(xy 106.68 80.01) (xy 109.22 80.01)
+			(xy 116.84 63.5) (xy 124.46 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0ba406c3-bb43-4549-8bae-36cca3c86008")
+		(uuid "09c8ed21-9202-48bb-934d-ce01f3c0baa2")
 	)
 	(wire
 		(pts
-			(xy 139.7 95.25) (xy 143.51 95.25)
+			(xy 106.68 85.09) (xy 109.22 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1649cdd4-5f87-4178-a717-17f7ce91e335")
+		(uuid "149c4f8a-e304-43d1-899a-d7964b216bff")
 	)
 	(wire
 		(pts
@@ -2198,16 +2198,6 @@
 			(type default)
 		)
 		(uuid "1d2f3b0e-6b53-4b37-844c-f5b7af9dc510")
-	)
-	(wire
-		(pts
-			(xy 139.7 92.71) (xy 143.51 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1ddd6181-b903-41f5-8f5f-c771428c891d")
 	)
 	(wire
 		(pts
@@ -2231,7 +2221,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 73.66) (xy 86.36 73.66)
+			(xy 74.93 63.5) (xy 80.01 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2271,6 +2261,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 63.5) (xy 93.98 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39cdc111-097e-4a0e-93b4-61c90d353016")
+	)
+	(wire
+		(pts
 			(xy 229.87 119.38) (xy 234.95 119.38)
 		)
 		(stroke
@@ -2301,16 +2301,6 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 77.47) (xy 109.22 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "457f4bf6-709d-45ad-a997-a4b423ff46e3")
-	)
-	(wire
-		(pts
 			(xy 158.75 67.31) (xy 158.75 69.85)
 		)
 		(stroke
@@ -2321,6 +2311,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 92.71) (xy 142.24 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bc45302-ef3f-4a66-bb63-a870bee36973")
+	)
+	(wire
+		(pts
 			(xy 124.46 63.5) (xy 124.46 69.85)
 		)
 		(stroke
@@ -2328,16 +2328,6 @@
 			(type default)
 		)
 		(uuid "5444666a-1c18-4b0f-880e-2e6d3d7f4d6b")
-	)
-	(wire
-		(pts
-			(xy 139.7 90.17) (xy 143.51 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56c1bef2-ce88-4ba2-83d5-b0e01ba0e7bf")
 	)
 	(wire
 		(pts
@@ -2371,16 +2361,6 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 73.66) (xy 102.87 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "677bf9d4-f36c-41b5-b8d1-f18d790ff45c")
-	)
-	(wire
-		(pts
 			(xy 176.53 119.38) (xy 176.53 123.19)
 		)
 		(stroke
@@ -2388,6 +2368,16 @@
 			(type default)
 		)
 		(uuid "68422dc8-0161-49fe-826f-0c2f1d4330d8")
+	)
+	(wire
+		(pts
+			(xy 106.68 77.47) (xy 109.22 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69100fc5-581a-46c4-b61e-35fbbfcc3529")
 	)
 	(wire
 		(pts
@@ -2417,7 +2407,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "87fc692d-93e1-48c7-8f23-5b2d33e2b855")
+		(uuid "8c5c4826-596b-4db1-aba9-e3dd746ff377")
 	)
 	(wire
 		(pts
@@ -2501,16 +2491,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 85.09) (xy 109.22 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2a1c832-f6f6-464e-9173-40d9ee507f68")
-	)
-	(wire
-		(pts
 			(xy 222.25 123.19) (xy 222.25 119.38)
 		)
 		(stroke
@@ -2518,6 +2498,16 @@
 			(type default)
 		)
 		(uuid "c44d4d19-8f2e-4f31-ad99-6ed3e7253a62")
+	)
+	(wire
+		(pts
+			(xy 106.68 80.01) (xy 109.22 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c83b57fb-4264-461b-815c-db8dc6ac1bb5")
 	)
 	(wire
 		(pts
@@ -2571,16 +2561,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 73.66) (xy 102.87 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2b62dba-74eb-46c8-814f-3b6eb84d37e2")
-	)
-	(wire
-		(pts
 			(xy 139.7 63.5) (xy 139.7 57.15)
 		)
 		(stroke
@@ -2598,6 +2578,26 @@
 			(type default)
 		)
 		(uuid "f49f7991-82c7-4049-9468-046f4f957e3a")
+	)
+	(wire
+		(pts
+			(xy 139.7 95.25) (xy 142.24 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fac09c1c-5de0-4f93-bf53-a9dcbcaeefc1")
+	)
+	(wire
+		(pts
+			(xy 139.7 87.63) (xy 142.24 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffe052f3-9919-4487-879c-8964ffafc127")
 	)
 	(label "eye right red"
 		(at 234.95 137.16 0)
@@ -2619,16 +2619,6 @@
 		)
 		(uuid "024c044a-7ecb-46f5-bacb-c6dc761d9774")
 	)
-	(label "eye right red"
-		(at 143.51 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "13de2098-8230-4818-b8ef-8291c589849d")
-	)
 	(label "eye left red"
 		(at 166.37 119.38 180)
 		(effects
@@ -2639,15 +2629,15 @@
 		)
 		(uuid "1658bd0c-e512-41a9-816c-c5128cb44842")
 	)
-	(label "eye left red"
-		(at 106.68 80.01 180)
+	(label "eye left blue"
+		(at 106.68 82.55 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "19085174-e1de-4ffa-876f-ff2d1e663ef3")
+		(uuid "1cd64b3e-83a5-4742-baa8-dd4baee20203")
 	)
 	(label "eye left blue"
 		(at 166.37 137.16 180)
@@ -2659,15 +2649,45 @@
 		)
 		(uuid "30cbce48-071d-441b-8c86-2a41eccc214a")
 	)
-	(label "eye right blue"
-		(at 143.51 90.17 0)
+	(label "mode SW"
+		(at 93.98 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "4e6b672f-164b-4b71-8327-8d2bd4fa68ed")
+		(uuid "37c8cfef-66e4-4ec1-a3dc-018bdeefe3cc")
+	)
+	(label "mode SW"
+		(at 142.24 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "52ad6ad5-ac1f-4c46-8aa5-08009a5248a2")
+	)
+	(label "eye right red"
+		(at 106.68 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "596dbaf4-b944-42b6-a945-cffecabfcd4c")
+	)
+	(label "eye left red"
+		(at 142.24 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c0b99d8-7924-474e-affd-5be1d2b5904b")
 	)
 	(label "eye left green"
 		(at 166.37 128.27 180)
@@ -2679,17 +2699,27 @@
 		)
 		(uuid "7dcecfcd-523b-458c-a95a-42489af20d5d")
 	)
-	(label "eye left green"
-		(at 106.68 82.55 180)
+	(label "eye right green"
+		(at 142.24 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "99964a4c-e2ab-49aa-85d7-7352da0b40a4")
+	)
+	(label "eye right blue"
+		(at 106.68 80.01 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "f2d978df-ab6c-477d-9ed7-d5aaad628476")
+		(uuid "d8ab3c6c-4126-48bf-9237-fc48189843db")
 	)
-	(label "eye left blue"
+	(label "eye left green"
 		(at 106.68 85.09 180)
 		(effects
 			(font
@@ -2697,7 +2727,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f79eb7d0-79a5-4452-86ee-15136a236b3f")
+		(uuid "ddd58e56-70b9-4ef4-8cdc-9b577e2b111d")
 	)
 	(label "eye right blue"
 		(at 234.95 119.38 0)
@@ -2708,16 +2738,6 @@
 			(justify left bottom)
 		)
 		(uuid "facf1800-47e1-4ddc-8436-09ca5ee5db8c")
-	)
-	(label "eye right green"
-		(at 143.51 92.71 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fb6e3f6e-ceec-4642-8600-cd0ab99e0dac")
 	)
 	(hierarchical_label "SCL"
 		(shape bidirectional)
@@ -2784,7 +2804,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
 			(at 135.89 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -3042,7 +3062,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_Osram:KRTBAILMS1A2872"
 			(at 185.42 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -3217,7 +3237,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 81.28 73.66 0)
+		(at 74.93 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3228,7 +3248,7 @@
 		(fields_autoplaced yes)
 		(uuid "3d35c045-8b0f-4ee6-9a4a-946e575c0070")
 		(property "Reference" "#PWR022"
-			(at 81.28 80.01 0)
+			(at 74.93 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3239,7 +3259,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 81.28 78.74 0)
+			(at 74.93 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3249,7 +3269,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 81.28 73.66 0)
+			(at 74.93 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3280,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 73.66 0)
+			(at 74.93 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3271,7 +3291,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 81.28 73.66 0)
+			(at 74.93 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3325,7 +3345,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 172.72 130.048 90)
 			(hide yes)
 			(show_name no)
@@ -3405,7 +3425,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_Osram:KRTBAILMS1A2872"
 			(at 213.36 127 0)
 			(hide yes)
 			(show_name no)
@@ -3491,7 +3511,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 226.06 121.158 90)
 			(hide yes)
 			(show_name no)
@@ -3571,7 +3591,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 172.72 138.938 90)
 			(hide yes)
 			(show_name no)
@@ -3729,7 +3749,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 226.06 130.048 90)
 			(hide yes)
 			(show_name no)
@@ -3811,7 +3831,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "BAT-HLD-001:BATHLD001"
 			(at 158.75 63.246 90)
 			(hide yes)
 			(show_name no)
@@ -3924,7 +3944,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 172.72 121.158 90)
 			(hide yes)
 			(show_name no)
@@ -3974,7 +3994,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 91.44 73.66 0)
+		(at 85.09 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3985,7 +4005,7 @@
 		(fields_autoplaced yes)
 		(uuid "9991c9b3-3061-4fcd-bac1-1f98f3ff4416")
 		(property "Reference" "SW3"
-			(at 91.44 67.31 0)
+			(at 85.09 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3995,7 +4015,7 @@
 			)
 		)
 		(property "Value" "Mode SW"
-			(at 91.44 69.85 0)
+			(at 85.09 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4004,8 +4024,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 91.44 73.66 0)
+		(property "Footprint" "PHAP3344CR:PHAP3344CR"
+			(at 85.09 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4016,7 +4036,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 73.66 0)
+			(at 85.09 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4027,7 +4047,7 @@
 			)
 		)
 		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 91.44 73.66 0)
+			(at 85.09 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4162,7 +4182,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 226.06 138.938 90)
 			(hide yes)
 			(show_name no)
@@ -4289,6 +4309,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 116.84 63.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db7d6861-9bd9-4ed1-bfdc-6fefca95f585")
+		(property "Reference" "#FLG07"
+			(at 116.84 61.595 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 116.84 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 116.84 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7836175c-e200-4c3d-acc9-03e4b183aad9")
+		)
+		(instances
+			(project "6-dc34-moth-badge"
+				(path "/93648b36-b53d-4b44-9fbb-640ef773b71b/1bd70e54-16cd-47b5-a733-5303a575a0cf"
+					(reference "#FLG07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_SPDT")
 		(at 148.59 57.15 0)
 		(unit 1)
@@ -4320,7 +4418,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "SLW-88229-2-SMT-TR:SLW882292SMTTR"
 			(at 148.59 57.15 0)
 			(hide yes)
 			(show_name no)
