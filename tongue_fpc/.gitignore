@@ -1,0 +1,4 @@
+*-backups/*
+*.lck
+fab/
+_autosave*

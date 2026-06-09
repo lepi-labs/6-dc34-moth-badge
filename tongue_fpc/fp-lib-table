@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "USB_LepiLabs") (type "KiCad") (uri "/home/xenu/MEGA/lepi-labs/6-dc34-moth-badge/board/libraries/USB_LepiLabs.pretty") (options "") (descr ""))
+	(lib (name "Connector_USB_PCB_Edge") (type "KiCad") (uri "${KIPRJMOD}/libraries/Connector_USB_PCB_Edge.pretty") (options "") (descr ""))
+)
