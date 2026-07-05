@@ -2158,16 +2158,8 @@
 		(uuid "d346d260-d3be-49ab-aa1a-5d86d0ba7d57")
 	)
 	(no_connect
-		(at 139.7 85.09)
-		(uuid "41a46ef6-6560-449d-b785-58e65df01c5a")
-	)
-	(no_connect
 		(at 153.67 59.69)
 		(uuid "434ff9e0-f447-4aee-a198-9ba595a41c67")
-	)
-	(no_connect
-		(at 139.7 90.17)
-		(uuid "9c21a9e0-9c4c-45f8-8519-ae061900187a")
 	)
 	(wire
 		(pts
@@ -2278,6 +2270,16 @@
 			(type default)
 		)
 		(uuid "3ad7220f-2476-42eb-9f44-84e1d2a724b7")
+	)
+	(wire
+		(pts
+			(xy 139.7 90.17) (xy 144.78 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3affd60a-5c0a-42b3-8a5b-fcbb27d09e3e")
 	)
 	(wire
 		(pts
@@ -2438,6 +2440,16 @@
 			(type default)
 		)
 		(uuid "94308c88-0a4d-482e-bdb6-81a0b92484ed")
+	)
+	(wire
+		(pts
+			(xy 139.7 85.09) (xy 144.78 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c6c68f9-bf11-4a9c-af2f-779c32d5f0c6")
 	)
 	(wire
 		(pts
@@ -2760,6 +2772,28 @@
 			(justify left)
 		)
 		(uuid "78ccf682-a7b0-40b0-a496-ced8804fa450")
+	)
+	(hierarchical_label "GPIO 2"
+		(shape bidirectional)
+		(at 144.78 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7dce0906-9ca3-4ba0-9946-cd83130bc7d7")
+	)
+	(hierarchical_label "GPIO 1"
+		(shape bidirectional)
+		(at 144.78 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "af40ce9d-93db-4267-9226-489382baa617")
 	)
 	(hierarchical_label "UPDI"
 		(shape input)
