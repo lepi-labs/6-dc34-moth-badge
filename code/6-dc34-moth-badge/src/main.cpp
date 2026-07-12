@@ -11,6 +11,7 @@ volatile uint8_t eye_r_r = 0;
 volatile uint8_t eye_r_g = 0;
 volatile uint8_t eye_r_b = 0;
 
+// ISR for doing PWM
 ISR(TCB0_INT_vect) {
   TCB0_INTFLAGS = TCB_CAPT_bm;
 
@@ -23,10 +24,6 @@ ISR(TCB0_INT_vect) {
   if (eye_r_b > cycle) PORTB_OUT &= ~PIN1_bm; else PORTB_OUT |= PIN1_bm;
   cycle++;
 }
-
-const uint8_t MODE_ADDR = 0;
-const uint16_t UPDATE_WAIT_MS = 3000;
-uint8_t current_mode = 0;
 
 void mode_red() {
   eye_l_r = 128;
@@ -80,15 +77,42 @@ void (*MODES[])() = {
 };
 constexpr int NUM_MODES = sizeof(MODES) / sizeof(void (*)());
 
+uint8_t current_mode = 0;
+const uint8_t MODE_ADDR = 0;
+const uint16_t UPDATE_WAIT_MS = 3000;
+bool mode_update_pending = false;
+uint64_t mode_last_update_ms = 0;
+
+// ISR for handling mode button
+ISR(PORTA_PORT_vect) {
+  PORTA_INTFLAGS = PIN4_bm;
+
+  static uint64_t last_press_ms = 0;
+  const uint64_t now_ms = millis();
+  const uint64_t debounce_ms = 100;
+  if (now_ms - last_press_ms < debounce_ms) {
+    last_press_ms = now_ms;
+    return;
+  } else {
+    last_press_ms = now_ms;
+    current_mode = (current_mode + 1) % NUM_MODES;
+    mode_update_pending = true;
+    mode_last_update_ms = now_ms;
+  }
+}
+
 void setup() {
   // configure LED pins
   PORTA_DIR |= PIN6_bm | PIN7_bm;
   PORTA_OUT |= PIN6_bm | PIN7_bm;
   PORTB_DIR |= PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
   PORTB_OUT |= PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
-  // configure mode switch pin
+  // configure mode switch pin. since it is being used in pullup mode,
+  // a rising edge will represent the button being released, and that's
+  // what the ISR will be attached to.
   PORTA_DIR &= ~PIN4_bm;
   PORTA_PIN4CTRL |= PORT_PULLUPEN_bm;
+  PORTA_PIN4CTRL |= PORT_ISC_RISING_gc;
 
   // setup timer for driving LEDs
   TCB0_CCMP = 0x008F; // ISR will run when counter reaches this value
@@ -110,20 +134,8 @@ void loop() {
     last_run = millis();
   }
 
-  static bool was_pressed = false;
-  bool currently_pressed = (PORTA_IN & PIN4_bm) == 0;
-  static bool update_pending = false;
-  static unsigned long last_update = 0;
-  if (!was_pressed && currently_pressed) {
-    was_pressed = true;
-  } else if (was_pressed && !currently_pressed) {
-    was_pressed = false;
-    current_mode++;
-    current_mode %= NUM_MODES;
-    update_pending = true;
-    last_update = millis();
-  } else if (update_pending && millis() - last_update >= UPDATE_WAIT_MS) {
-    update_pending = false;
+  if (mode_update_pending && millis() - mode_last_update_ms > UPDATE_WAIT_MS) {
+    mode_update_pending = false;
     EEPROM.put(MODE_ADDR, current_mode);
   }
 }
