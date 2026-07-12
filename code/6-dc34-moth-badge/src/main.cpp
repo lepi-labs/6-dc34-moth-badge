@@ -4,90 +4,72 @@
 #include <EEPROM.h>
 #include <FastLED.h>
 
-#include "software_pwm.hpp"
+volatile uint8_t eye_l_r = 0;
+volatile uint8_t eye_l_g = 0;
+volatile uint8_t eye_l_b = 0;
+volatile uint8_t eye_r_r = 0;
+volatile uint8_t eye_r_g = 0;
+volatile uint8_t eye_r_b = 0;
 
-#define EYE_R_R PIN_PB0
-#define EYE_R_G PIN_PA6
-#define EYE_R_B PIN_PB1
-#define EYE_L_R PIN_PA7
-#define EYE_L_G PIN_PB3
-#define EYE_L_B PIN_PB2
-#define MODE_SW PIN_PA4
+ISR(TCB0_INT_vect) {
+  TCB0_INTFLAGS = TCB_CAPT_bm;
 
-// void timer_init() {
-//   // this is the value the timer resets at (the top of the sawtooth wave).
-//   // the interrupt will fire when this is reached.
-//   const uint16_t timer_top = 0x0050;
-
-//   // set prescaler
-//   TCB0_CTRLA |= TCB_CLKSEL_CLKDIV1_gc;
-//   // Write TOP value to compare/capture register
-//   TCB0_CCMP = timer_top;
-//   // enable counter
-//   TCB0_CTRLA |= TCB_ENABLE_bm;
-//   // enable the interrupt
-//   TCB0_INTCTRL |= TCB_CAPT_bm;
-// }
-
-// ISR(TCB0_INT_vect) {
-//   static bool status = false;
-//   digitalWrite(EYE_R_R, status);
-//   digitalWrite(EYE_L_R, status);
-//   status = !status;
-// }
+  static uint8_t cycle = 0;
+  if (eye_l_r > cycle) PORTA_OUT &= ~PIN7_bm; else PORTA_OUT |= PIN7_bm;
+  if (eye_l_g > cycle) PORTB_OUT &= ~PIN3_bm; else PORTB_OUT |= PIN3_bm;
+  if (eye_l_b > cycle) PORTB_OUT &= ~PIN2_bm; else PORTB_OUT |= PIN2_bm;
+  if (eye_r_r > cycle) PORTB_OUT &= ~PIN0_bm; else PORTB_OUT |= PIN0_bm;
+  if (eye_r_g > cycle) PORTA_OUT &= ~PIN6_bm; else PORTA_OUT |= PIN6_bm;
+  if (eye_r_b > cycle) PORTB_OUT &= ~PIN1_bm; else PORTB_OUT |= PIN1_bm;
+  cycle++;
+}
 
 const uint8_t MODE_ADDR = 0;
 const uint16_t UPDATE_WAIT_MS = 3000;
 uint8_t current_mode = 0;
 
-pwm_pin eye_l_r { EYE_L_R, 0, true };
-pwm_pin eye_l_g { EYE_L_G, 0, true };
-pwm_pin eye_l_b { EYE_L_B, 0, true };
-pwm_pin eye_r_r { EYE_R_R, 0, true };
-pwm_pin eye_r_g { EYE_R_G, 0, true };
-pwm_pin eye_r_b { EYE_R_B, 0, true };
-pwm_pin *pwm_pins[] = {
-  &eye_l_r,
-  &eye_l_g,
-  &eye_l_b,
-  &eye_r_r,
-  &eye_r_g,
-  &eye_r_b
-};
-constexpr size_t pwm_pin_count = sizeof(pwm_pins) / sizeof(pwm_pin*);
-
-#define EYE_L_RGB &eye_l_r, &eye_l_g, &eye_l_b
-#define EYE_R_RGB &eye_r_r, &eye_r_g, &eye_r_b
-void set_rgb_led(pwm_pin *pin_r, pwm_pin *pin_g, pwm_pin *pin_b, uint8_t r, uint8_t g, uint8_t b) {
-  pin_r->value = (uint8_t)((uint16_t)r * MAX_BRIGHTNESS / 255);
-  pin_g->value = (uint8_t)((uint16_t)g * MAX_BRIGHTNESS / 255);
-  pin_b->value = (uint8_t)((uint16_t)b * MAX_BRIGHTNESS / 255);
-}
-
 void mode_red() {
-  set_rgb_led(EYE_L_RGB, 100, 0, 0);
-  set_rgb_led(EYE_R_RGB, 100, 0, 0);
+  eye_l_r = 128;
+  eye_l_g = 0;
+  eye_l_b = 0;
+  eye_r_r = 128;
+  eye_r_g = 0;
+  eye_r_b = 0;
 }
 
 void mode_green() {
-  set_rgb_led(EYE_L_RGB, 0, 100, 0);
-  set_rgb_led(EYE_R_RGB, 0, 100, 0);
+  eye_l_r = 0;
+  eye_l_g = 128;
+  eye_l_b = 0;
+  eye_r_r = 0;
+  eye_r_g = 128;
+  eye_r_b = 0;
 }
 
 void mode_blue() {
-  set_rgb_led(EYE_L_RGB, 0, 0, 100);
-  set_rgb_led(EYE_R_RGB, 0, 0, 100);
+  eye_l_r = 0;
+  eye_l_g = 0;
+  eye_l_b = 128;
+  eye_r_r = 0;
+  eye_r_g = 0;
+  eye_r_b = 128;
 }
 
 void mode_rainbow() {
-  static CHSV hsv_l(0, 255, 100);
-  static CHSV hsv_r(40, 255, 100);
-  CRGB rgb_l(hsv_l);
-  CRGB rgb_r(hsv_r);
-  set_rgb_led(EYE_L_RGB, rgb_l.r, rgb_l.g, rgb_l.b);
-  set_rgb_led(EYE_R_RGB, rgb_r.r, rgb_r.g, rgb_r.b);
-  hsv_l.h++;
-  hsv_r.h++;
+  static CHSV eye_l(0, 255, 100);
+  static CHSV eye_r(30, 255, 100);
+
+  CRGB eye_l_rgb(eye_l);
+  CRGB eye_r_rgb(eye_r);
+  eye_l_r = eye_l_rgb.r;
+  eye_l_g = eye_l_rgb.g;
+  eye_l_b = eye_l_rgb.b;
+  eye_r_r = eye_r_rgb.r;
+  eye_r_g = eye_r_rgb.g;
+  eye_r_b = eye_r_rgb.b;
+
+  eye_l.h++;
+  eye_r.h++;
 }
 
 void (*MODES[])() = {
@@ -99,8 +81,20 @@ void (*MODES[])() = {
 constexpr int NUM_MODES = sizeof(MODES) / sizeof(void (*)());
 
 void setup() {
-  setup_pwm(pwm_pins, pwm_pin_count);
-  pinMode(MODE_SW, INPUT_PULLUP);
+  // configure LED pins
+  PORTA_DIR |= PIN6_bm | PIN7_bm;
+  PORTA_OUT |= PIN6_bm | PIN7_bm;
+  PORTB_DIR |= PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
+  PORTB_OUT |= PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
+  // configure mode switch pin
+  PORTA_DIR &= ~PIN4_bm;
+  PORTA_PIN4CTRL |= PORT_PULLUPEN_bm;
+
+  // setup timer for driving LEDs
+  TCB0_CCMP = 0x008F; // ISR will run when counter reaches this value
+  TCB0_CTRLA |= TCB_CLKSEL_DIV2_gc; // counter will increment at CPU / 2
+  TCB0_CTRLA |= TCB_ENABLE_bm; // enable the counter
+  TCB0_INTCTRL |= TCB_CAPT_bm; // enable the interrupt
 
   EEPROM.get(MODE_ADDR, current_mode);
   if (current_mode >= NUM_MODES) {
@@ -109,8 +103,6 @@ void setup() {
 }
 
 void loop() {
-  handle_pwm(pwm_pins, pwm_pin_count);
-  
   const uint16_t anim_delay = 1000 / 60;
   static uint64_t last_run = 0;
   if (millis() - last_run >= anim_delay) {
@@ -119,7 +111,7 @@ void loop() {
   }
 
   static bool was_pressed = false;
-  bool currently_pressed = digitalRead(MODE_SW) == LOW;
+  bool currently_pressed = (PORTA_IN & PIN4_bm) == 0;
   static bool update_pending = false;
   static unsigned long last_update = 0;
   if (!was_pressed && currently_pressed) {
